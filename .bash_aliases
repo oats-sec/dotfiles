@@ -23,6 +23,10 @@ alias listen='echo "alias: nc -vlnp <port>"; sudo nc -vlnp'
 # Python3 HTTP server in current directory `_http <port>`
 alias _http='echo "alias: python3 -m http.server <port>"; sudo python3 -m http.server'
 
+# Python3 FTP server in current directory `_ftp`
+# Install with: `sudo pip3 install pyftpdlib`
+alias _ftp='echo "alias: python3 -m pyftpdlib -w -p 21"; sudo python3 -m pyftpdlib -w -p 21'
+
 # PHP server in current directory `_php`
 alias _php='echo "alias: php -S 0.0.0.0:8000";sudo php -S 0.0.0.0:8000'
 
