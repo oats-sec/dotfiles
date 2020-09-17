@@ -35,7 +35,7 @@ alias _smb='echo "alias: smbserver.py EVILSHARE .";sudo smbserver.py EVILSHARE .
 alias _smb2='echo "alias: smbserver.py EVILSHARE . -smb2support";sudo smbserver.py EVILSHARE . -smb2support'
 
 # Show current interface IP addresses
-alias _ip="ip addr | grep inet | grep -e eth -e tun -e wlan -e ppp | awk -F \" \" '{print \$NF, \$2}'"
+alias _ip="ip addr | grep inet | grep -e eth -e tun -e wlan -e ppp -e en | awk -F \" \" '{print \$NF, \$2}'"
 
 
 #################
