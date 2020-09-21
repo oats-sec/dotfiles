@@ -46,8 +46,33 @@ alias where='which'
 alias lsa='ls -al'
 alias sapt='sudo apt'
 
+# Auto archive extraction
+# Who can memorize all of those archive commands anyway?
+extract () {
+    if [ -f "$1" ] ; then
+        case $1 in
+            *.tar.bz2)   tar xvjf "$1" ;;
+            *.tar.gz)    tar xvzf "$1" ;;
+            *.tar.xz)    tar xvJf "$1" ;;
+            *.bz2)       bunzip2 "$1" ;;
+            *.rar)       unrar x "$1" ;;
+            *.gz)        gunzip "$1" ;;
+            *.tar)       tar xvf "$1" ;;
+            *.tbz2)      tar xvjf "$1" ;;
+            *.tgz)       tar xvzf "$1" ;;
+            *.zip)       unzip "$1" ;;
+            *.jar)       unzip "$1" ;;
+            *.Z)         uncompress "$1" ;;
+            *.7z)        7z x "$1" ;;
+            *)           echo "'$1' cannot be extracted via >extract<" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
 #######
 # Dev #
 #######
-alias p3='python3'
-alias py3='python3'
+alias p3='/usr/bin/python3'
+alias py3='/usr/bin/python3'
